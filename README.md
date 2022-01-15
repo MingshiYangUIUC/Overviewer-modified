@@ -1,5 +1,5 @@
 # Overviewer-modified
-added Minecraft-Overviewer-master/overviewer_core/sq_analysis.py
+added Minecraft-Overviewer-master/overviewer_core/sw_analysis.py
 
 modified Minecraft-Overviewer-master/overviewer_core/nbt.py
 
