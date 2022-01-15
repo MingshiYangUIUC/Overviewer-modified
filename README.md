@@ -1,4 +1,7 @@
 # Overviewer-modified
-changed overviewer_core/nbt.py
+added Minecraft-Overviewer-master/overviewer_core/sq_analysis.py
 
-changed build/scripts-3.7/overviewer.py
+modified Minecraft-Overviewer-master/overviewer_core/nbt.py
+
+modified Minecraft-Overviewer-master/build/scripts-3.7/overviewer.py
+  
