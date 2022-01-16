@@ -1,0 +1,15 @@
+Biome  [('grove', 2), ('cold_ocean', 1), ('dark_forest', 2), ('deep_cold_ocean', 2), ('old_growth_birch_forest', 1), ('meadow', 1), ('stony_shore', 1), ('ocean', 1), ('birch_forest', 1), ('jagged_peaks', 3)]
+Structures  [('shipwreck', 1), ('ocean_ruin', 1)]
+Spawner  0
+Chest  0
+r_am  0
+r_dm  0
+r_gd  0
+r_em  1
+r_bn  0
+r_cp  0
+r_ir  0
+r_cl  1
+r_lp  0
+r_rs  0
+n_bio  4

@@ -485,7 +485,7 @@ def get_features(summary,Rarity):
     summary = list(summary)
     #print(rindex,rarity)
     #print(summary)
-    sindex = ['Biomes','','','Spawner','Chest','Structures','Ores','Amethyst','Diamond','Gold','Emerald','Bone','Copper','Iron','Coal','Lapis','Redstone','a_stone','a_soil','a_veggies','a_water','a_ores','a_sand','a_snow']
+    sindex = ['Biomes','','','Spawner','Chest','Structures','Ores','Amethyst','Diamond','Gold','Emerald','Bone','Copper','Iron','Coal','Lapis','Redstone','a_stone','a_soil','a_veggies','a_water','a_ores','a_sand','a_frozen']
     d_summary = {}
     for i in range(len(summary)):
         if i in range(3,5) or i > 7: 
@@ -632,7 +632,7 @@ def get_features(summary,Rarity):
 
     
     #don't do it anymore if image code changed.
-    b_print = reformat_text(b_print,10)
-    f_print = reformat_text(f_print)
+    '''b_print = reformat_text(b_print,10)
+    f_print = reformat_text(f_print)'''
 
     return ntorgb(a_print), ntorgb(b_print), ntorgb(res_print_f), ntorgb(f_print[:20])

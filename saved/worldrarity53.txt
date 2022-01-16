@@ -1,0 +1,15 @@
+Biome  [('old_growth_birch_forest', 1), ('ocean', 1), ('birch_forest', 1), ('lukewarm_ocean', 1), ('deep_ocean', 2)]
+Structures  [('shipwreck', 1), ('monument', 5)]
+Spawner  1
+Chest  1
+r_am  1
+r_dm  4
+r_gd  3
+r_em  0
+r_bn  0
+r_cp  0
+r_ir  2
+r_cl  0
+r_lp  2
+r_rs  2
+n_bio  0

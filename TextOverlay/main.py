@@ -1,6 +1,6 @@
 #!C:\Users\yangm\Anaconda3\python.exe
 
-from TextOverlay import *
+from TextOverlay_addon import *
 import sys
 import os
 

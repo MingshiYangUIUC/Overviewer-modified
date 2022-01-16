@@ -1,0 +1,15 @@
+Biome  [('grove', 2), ('jagged_peaks', 3), ('snowy_slopes', 2), ('meadow', 1)]
+Structures  []
+Spawner  0
+Chest  0
+r_am  0
+r_dm  0
+r_gd  0
+r_em  2
+r_bn  0
+r_cp  0
+r_ir  0
+r_cl  4
+r_lp  0
+r_rs  0
+n_bio  0

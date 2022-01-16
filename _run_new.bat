@@ -1,6 +1,6 @@
 @ECHO OFF
 
-for /l %%x in (21, 1, 50) do (
+for /l %%x in (56, 1, 58) do (
 	ECHO "Start a render..."
 	ECHO %%x
 
