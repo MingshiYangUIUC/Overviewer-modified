@@ -1,11 +1,9 @@
-from pydoc import pager
 import numpy as np
 from PIL import Image
 import time
 import os
 import copy
 
-from pandas import reset_option
 
 def packed_longarray_to_shorts_v116_nbt(long_array, n): #Borrowed from Overviewer
     bits_per_value = max(4, (len(long_array) * 64) // n)
@@ -39,7 +37,7 @@ def ntorgb(li):
         li[i][1] = c
     return li
 
-def reformat_text(li): #put long text (char > 13) in the first column, and strip residual if too long. Biome: 10, Feature: 20
+def reformat_text(li,maxlen=100): #put long text (char > 13) in the first column, and strip residual if too long. Biome: 10, Feature: 20
     li_new = []
     i = 0
     for l in li:
@@ -52,11 +50,18 @@ def reformat_text(li): #put long text (char > 13) in the first column, and strip
             else:
                 li_new.append(['',0])
                 li_new.append(l)
-                li_new.append(['',0])
+                i += 1
+                if len(l[0]) > 17:
+                    li_new.append(['',0])
+                    i += 1
         else:
             li_new.append(l)
         i += 1
-    return li_new
+    if len(li_new) > maxlen:
+        li_new[maxlen-1] = ['...',0]
+        return li_new[:maxlen]
+    else:
+        return li_new
 
 def inspect_save_chunk(nbtdata,X,Z,outdir):
     ti = time.time()
@@ -627,7 +632,7 @@ def get_features(summary,Rarity):
 
     
     #don't do it anymore if image code changed.
-    b_print = reformat_text(b_print)
+    b_print = reformat_text(b_print,10)
     f_print = reformat_text(f_print)
 
-    return ntorgb(a_print), ntorgb(b_print), ntorgb(res_print_f), ntorgb(f_print)
+    return ntorgb(a_print), ntorgb(b_print), ntorgb(res_print_f), ntorgb(f_print[:20])

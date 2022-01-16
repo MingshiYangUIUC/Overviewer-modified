@@ -1,9 +1,13 @@
 @ECHO OFF
 
-for /l %%x in (16, 1, 16) do (
+for /l %%x in (20, 1, 20) do (
 	ECHO "Start a render..."
 	ECHO %%x
-	
+
+	if not exist "world" mkdir world
+	if not exist "world\datapacks" mkdir world\datapacks
+
+	xcopy /y auto-stop-pack.zip world\datapacks
 	:: start server in another shell so it can be "stopped" by command
 	start /B "" _server.bat
 
@@ -13,7 +17,7 @@ for /l %%x in (16, 1, 16) do (
 	
 	:: call the overviewer            ########################################## CHANGE THESE BELOW ##########################################
 	cd Minecraft-Overviewer-master
-	build\scripts-3.7\overviewer.py C:\Users\yangm\AppData\Roaming\.minecraft\Server\world C:\Users\yangm\AppData\Roaming\.minecraft\Server\Out
+	python build\scripts-3.7\overviewer.py C:\Users\yangm\AppData\Roaming\.minecraft\Server\world C:\Users\yangm\AppData\Roaming\.minecraft\Server\Out
 
 	:: go back 
 	cd..
