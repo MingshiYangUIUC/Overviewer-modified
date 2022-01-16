@@ -39,6 +39,25 @@ def ntorgb(li):
         li[i][1] = c
     return li
 
+def reformat_text(li): #put long text (char > 13) in the first column, and strip residual if too long. Biome: 10, Feature: 20
+    li_new = []
+    i = 0
+    for l in li:
+        if len(l[0])>13:
+            if i % 2 == 0:
+                li_new.append(l)
+                if len(l[0]) > 17:
+                    li_new.append(['',0])
+                    i += 1
+            else:
+                li_new.append(['',0])
+                li_new.append(l)
+                li_new.append(['',0])
+        else:
+            li_new.append(l)
+        i += 1
+    return li_new
+
 def inspect_save_chunk(nbtdata,X,Z,outdir):
     ti = time.time()
     C = nbtdata[1]
@@ -453,7 +472,7 @@ def get_features(summary,Rarity):
     ## biome keyword, need all 4 types!!!
     kw_snow = ['snow','jagged','ice','frozen']
     kw_dry = ['savanna','desert','badland']
-    kw_temp = ['stony_peaks','jungle','bamboo_jungle','sparse_jungle','mushroom_fields','plains','sunflower_plains','beach','swamp','dripstone_caves','dark_forest','forest','flower_forest','old_growth_birch_forest','lush_caves','ocean','deep_ocean','deep_cold_ocean','deep_lukewarm_ocean','lukewarm_ocean','river','warm_ocean','meadow']
+    kw_temp = ['stony_peaks','jungle','bamboo_jungle','sparse_jungle','mushroom_fields','plains','sunflower_plains','beach','swamp','dark_forest','forest','flower_forest','old_growth_birch_forest','ocean','deep_ocean','deep_cold_ocean','deep_lukewarm_ocean','lukewarm_ocean','river','warm_ocean','meadow']
     kw_cold = ['old_growth_pine_taiga','old_growth_spruce_taiga','taiga','windswept_hills','windswept_forest','windswept_gravelly_hills']
 
     rindex = list(Rarity[0])
@@ -605,5 +624,10 @@ def get_features(summary,Rarity):
     for res in res_print:
         if res[0][1] != '0.0%' and res[0][0] != 'Bone':
             res_print_f.append(res)
+
     
+    #don't do it anymore if image code changed.
+    b_print = reformat_text(b_print)
+    f_print = reformat_text(f_print)
+
     return ntorgb(a_print), ntorgb(b_print), ntorgb(res_print_f), ntorgb(f_print)

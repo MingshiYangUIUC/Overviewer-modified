@@ -1,0 +1,24 @@
+['windswept_savanna', 'forest', 'savanna', 'sunflower_plains', 'deep_lukewarm_ocean', 'beach', 'river', 'lukewarm_ocean', 'ocean']
+[]
+[]
+8
+24
+['ruined_portal', 'shipwreck', 'ocean_ruin', 'buried_treasure', 'monument']
+['lapis_ore', 'deepslate_copper_ore', 'small_amethyst_bud', 'budding_amethyst', 'deepslate_diamond_ore', 'amethyst_block', 'amethyst_cluster', 'copper_ore', 'deepslate_redstone_ore', 'deepslate_iron_ore', 'diamond_ore', 'large_amethyst_bud', 'deepslate_lapis_ore', 'redstone_ore', 'deepslate_gold_ore', 'gold_ore', 'iron_ore', 'medium_amethyst_bud', 'coal_ore', 'deepslate_coal_ore']
+0.06508805799613884
+0.04452149245498601
+0.07966589180883338
+0.0
+0.0
+0.21902210314802412
+0.23123596391001142
+0.17911035814191717
+0.07292856861431779
+0.10842756392577124
+0.0006645793950850661
+0.012752540170132325
+0.002717391304347826
+0.9113894139886578
+0.0
+0.06676807655954631
+0.0
