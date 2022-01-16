@@ -1,6 +1,6 @@
 @ECHO OFF
 
-for /l %%x in (56, 1, 58) do (
+for /l %%x in (59, 1, 59) do (
 	ECHO "Start a render..."
 	ECHO %%x
 
@@ -10,10 +10,11 @@ for /l %%x in (56, 1, 58) do (
 	xcopy /y auto-stop-pack.zip world\datapacks
 	:: start server 
 	_server.bat
-	:: call the overviewer            ########################################## CHANGE THESE BELOW ##########################################
+	:: call the overviewer            
 	cd Minecraft-Overviewer-master
-	python build\scripts-3.7\overviewer.py C:\Users\yangm\AppData\Roaming\.minecraft\Server\world C:\Users\yangm\AppData\Roaming\.minecraft\Server\Out
-
+	python build\scripts-3.7\overviewer.py ..\world ..\Out
+	
+	pause
 	:: go back 
 	cd..
 
