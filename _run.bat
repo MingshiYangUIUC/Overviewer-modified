@@ -8,7 +8,7 @@ for /l %%x in (1, 1, 10) do (
 	start /B "" _server.bat
 
 	:: wait for server to generate world and "stop" it, adjust this delay (sec) based on device performance
-	timeout 75
+	timeout 70
 	taskkill /F /im java.exe
 	
 	:: call the overviewer            ########################################## CHANGE THESE BELOW ##########################################
@@ -22,12 +22,15 @@ for /l %%x in (1, 1, 10) do (
 	move Out\hdimage.png saved\hdimage%%x.png
 	move Out\worldsummary.txt saved\worldsummary%%x.txt
 	move Out\worldrarity.txt saved\worldrarity%%x.txt
+	move Out\worldfeatures.txt saved\worldfeatures%%x.txt
 
 	::	below saves some output of default overviewer, and png-it can be used to generate hd image using items in this folder
 	::move Out\world-lighting saved\world-lighting%%x
 
 	:: delete world files and overviewer output files
 	_save_delete.bat
-
+	:: generate final image
+	TextOverlay\main.py %%x
+	
 	ECHO "Saved world data and deleted temporary data, end this render..."
 )

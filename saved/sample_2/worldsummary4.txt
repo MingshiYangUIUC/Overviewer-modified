@@ -1,0 +1,24 @@
+['stony_shore', 'warm_ocean', 'badlands', 'desert', 'river']
+[]
+[]
+13
+18
+['mineshaft', 'ruined_portal', 'fossil']
+['amethyst_cluster', 'bone_block', 'large_amethyst_bud', 'budding_amethyst', 'deepslate_iron_ore', 'deepslate_coal_ore', 'diamond_ore', 'medium_amethyst_bud', 'amethyst_block', 'small_amethyst_bud', 'gold_ore', 'redstone_ore', 'lapis_ore', 'copper_ore', 'coal_ore', 'deepslate_gold_ore', 'iron_ore', 'deepslate_copper_ore', 'deepslate_lapis_ore', 'deepslate_diamond_ore', 'deepslate_redstone_ore']
+0.05422635277852452
+0.04604631514267061
+0.08694650332194016
+0.0
+0.001190521909443527
+0.2064979453896079
+0.24382656784054688
+0.18599024540112907
+0.0702791965897308
+0.10499635162640654
+0.048063858695652176
+0.0017500590737240076
+0.0
+0.642921491020794
+0.0007605741965973535
+0.24760012996219283
+0.0

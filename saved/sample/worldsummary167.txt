@@ -1,0 +1,24 @@
+['dark_forest', 'cold_ocean', 'deep_ocean', 'lush_caves', 'old_growth_pine_taiga', 'stony_shore', 'ocean', 'river', 'beach', 'old_growth_spruce_taiga']
+[]
+[]
+7
+11
+['buried_treasure', 'mineshaft', 'ocean_ruin']
+['deepslate_iron_ore', 'redstone_ore', 'lapis_ore', 'gold_ore', 'amethyst_block', 'deepslate_coal_ore', 'budding_amethyst', 'deepslate_lapis_ore', 'deepslate_redstone_ore', 'medium_amethyst_bud', 'coal_ore', 'deepslate_copper_ore', 'copper_ore', 'deepslate_diamond_ore', 'deepslate_gold_ore', 'small_amethyst_bud', 'large_amethyst_bud', 'diamond_ore', 'iron_ore', 'amethyst_cluster']
+0.07581072987079661
+0.041156840934371525
+0.07320099255583126
+0.0
+0.0
+0.21442628561649696
+0.23444853255754255
+0.19033969367673484
+0.06468725934799349
+0.10592966544023273
+0.0010411743856332703
+0.02305352079395085
+0.08905363894139887
+0.8238347707939508
+0.0
+0.05272329867674858
+0.0

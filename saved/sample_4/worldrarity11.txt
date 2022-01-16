@@ -1,0 +1,15 @@
+Biome  [('stony_shore', 1), ('cold_ocean', 1), ('deep_cold_ocean', 2)]
+Structures  [('ocean_ruin', 1), ('buried_treasure', 1), ('shipwreck', 1)]
+Spawner  0
+Chest  0
+r_am  1
+r_dm  1
+r_gd  1
+r_em  0
+r_bn  0
+r_cp  0
+r_ir  0
+r_cl  0
+r_lp  1
+r_rs  1
+n_bio  0

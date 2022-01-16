@@ -1,0 +1,15 @@
+Biome  [('deep_lukewarm_ocean', 2), ('savanna', 1), ('flower_forest', 2), ('lukewarm_ocean', 1), ('sunflower_plains', 2)]
+Structures  []
+Spawner  0
+Chest  0
+r_am  0
+r_dm  0
+r_gd  1
+r_em  0
+r_bn  0
+r_cp  0
+r_ir  1
+r_cl  0
+r_lp  0
+r_rs  1
+n_bio  0

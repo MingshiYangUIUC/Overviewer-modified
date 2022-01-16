@@ -1,0 +1,15 @@
+Biome  [('birch_forest', 1), ('stony_shore', 1), ('deep_ocean', 2), ('old_growth_birch_forest', 1), ('dark_forest', 2), ('ocean', 1)]
+Structures  []
+Spawner  2
+Chest  0
+r_am  0
+r_dm  1
+r_gd  2
+r_em  0
+r_bn  0
+r_cp  0
+r_ir  1
+r_cl  0
+r_lp  2
+r_rs  2
+n_bio  1

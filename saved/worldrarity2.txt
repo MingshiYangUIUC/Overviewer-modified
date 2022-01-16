@@ -1,14 +1,15 @@
-Biome  [('warm_ocean', 2), ('desert', 2), ('lukewarm_ocean', 1), ('jungle', 1)]
-Structures  [('jungle_pyramid', 4), ('ocean_ruin', 1), ('shipwreck', 1), ('fossil', 1)]
+Biome  [('sunflower_plains', 2), ('flower_forest', 2)]
+Structures  [('village', 1)]
 Spawner  0
 Chest  0
-r_am  0
-r_dm  1
-r_gd  3
+r_am  2
+r_dm  0
+r_gd  0
 r_em  0
 r_bn  0
-r_cp  0
-r_ir  1
+r_cp  1
+r_ir  0
 r_cl  0
-r_lp  1
-r_rs  3
+r_lp  0
+r_rs  0
+n_bio  0

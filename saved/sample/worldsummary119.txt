@@ -1,0 +1,24 @@
+['forest', 'old_growth_birch_forest', 'lush_caves', 'river', 'lukewarm_ocean', 'beach', 'birch_forest', 'ocean']
+[]
+[]
+9
+11
+['ocean_ruin', 'ruined_portal', 'mineshaft']
+['deepslate_diamond_ore', 'diamond_ore', 'small_amethyst_bud', 'deepslate_copper_ore', 'deepslate_coal_ore', 'deepslate_lapis_ore', 'budding_amethyst', 'copper_ore', 'amethyst_block', 'deepslate_redstone_ore', 'iron_ore', 'deepslate_iron_ore', 'medium_amethyst_bud', 'amethyst_cluster', 'gold_ore', 'deepslate_gold_ore', 'redstone_ore', 'lapis_ore', 'large_amethyst_bud', 'coal_ore']
+0.06181451612903226
+0.046129032258064515
+0.08080645161290323
+0.0
+0.0
+0.21370967741935484
+0.23846774193548387
+0.17790322580645163
+0.07040322580645161
+0.11076612903225806
+0.0009599480151228733
+0.031611826559546315
+0.03824285207939509
+0.8312411389413988
+0.0
+0.09459918478260869
+0.0

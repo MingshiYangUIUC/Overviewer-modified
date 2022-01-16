@@ -1,0 +1,24 @@
+['sunflower_plains', 'dripstone_caves', 'river', 'meadow', 'flower_forest', 'plains']
+[]
+[]
+17
+24
+['mineshaft', 'village']
+['deepslate_diamond_ore', 'lapis_ore', 'redstone_ore', 'amethyst_block', 'deepslate_gold_ore', 'deepslate_redstone_ore', 'coal_ore', 'deepslate_iron_ore', 'gold_ore', 'diamond_ore', 'deepslate_lapis_ore', 'deepslate_coal_ore', 'copper_ore', 'medium_amethyst_bud', 'budding_amethyst', 'small_amethyst_bud', 'emerald_ore', 'deepslate_copper_ore', 'amethyst_cluster', 'large_amethyst_bud', 'iron_ore']
+0.020724501156118867
+0.03225714367274699
+0.05569352858896406
+0.00011418457937255574
+0.0
+0.3522308812194913
+0.1703919385686963
+0.23379292626530787
+0.05517969798178756
+0.07961519796751448
+0.0072291469754253304
+0.5715013586956522
+0.12754017013232513
+0.14712310964083175
+6.645793950850661e-05
+0.007878957939508506
+0.0

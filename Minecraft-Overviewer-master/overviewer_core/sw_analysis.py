@@ -1,9 +1,12 @@
-
 from pydoc import pager
 import numpy as np
 from PIL import Image
 import time
 import os
+import copy
+
+from pandas import reset_option
+
 def packed_longarray_to_shorts_v116_nbt(long_array, n): #Borrowed from Overviewer
     bits_per_value = max(4, (len(long_array) * 64) // n)
     b = np.asarray(long_array, dtype=np.uint64)
@@ -14,6 +17,27 @@ def packed_longarray_to_shorts_v116_nbt(long_array, n): #Borrowed from Overviewe
         j = (n + shorts_per_long - 1 - i) // shorts_per_long
         result[i::shorts_per_long] = (b[:j] >> (bits_per_value * i)) & mask
     return result
+
+def topercentage(n,r=2):
+    return str(round(n*100,r))+'%'
+
+def ntorgb(li):
+    for i in range(len(li)):
+        n = li[i][1]
+        if n == 0:#white
+            c = (255,255,255)
+        elif n == 1:#green
+            c = (51,255,51)
+        elif n == 2:#blue
+            c = (102,178,255)
+        elif n == 3:#purple
+            c = (255,51,255)
+        elif n == 4:#orange
+            c = (255,128,0)
+        elif n >= 5:#red
+            c = (255,0,0)
+        li[i][1] = c
+    return li
 
 def inspect_save_chunk(nbtdata,X,Z,outdir):
     ti = time.time()
@@ -352,9 +376,10 @@ def get_rarity(summary):
     r_rs = np.float32(np.asarray('0.10136153450402448 0.10704497540014286 0.10999262690111615 0.11480901781769662'.split()))
     r_ir = np.float32(np.asarray('0.22403459181578622 0.23550190876256766 0.24144930130665168 0.25116719618574657'.split()))
     r_lp = np.float32(np.asarray('0.06767660632708769 0.07107235386120928 0.07283351941194385 0.07571122112069459'.split()))
+    n_bio = np.float32(np.asarray('9.258457832616084 10.80796755139652 11.801295494511187 13.808796180699936'.split()))
 
-    R = [0 for i in range(14)]
-    Index = ['Biome','Structures','Spawner','Chest','r_am','r_dm','r_gd','r_em','r_bn','r_cp','r_ir','r_cl','r_lp','r_rs']
+    R = [0 for i in range(15)]
+    Index = ['Biome','Structures','Spawner','Chest','r_am','r_dm','r_gd','r_em','r_bn','r_cp','r_ir','r_cl','r_lp','r_rs','n_bio']
     
     structures                  = 'mineshaft ruined_portal village ocean_ruin shipwreck buried_treasure fossil igloo pillager_outpost desert_pyramid swamp_hut jungle_pyramid mansion'.split()
     str_p = np.float32(np.asarray('0.89      0.26          0.25    0.235      0.2       0.135           0.115  0.025 0.01             0.01           0.005     0.005          0.005'.split()))
@@ -414,4 +439,171 @@ def get_rarity(summary):
         for p in ref:
             if p < data:
                 R[Ri] += 1
+    #print(R)
+    n_b = len(summary[0])
+    for p in n_bio:
+        if p < n_b:
+            R[14] += 1
+    #print(R)
     return Index,R
+
+
+def get_features(summary,Rarity):
+
+    ## biome keyword, need all 4 types!!!
+    kw_snow = ['snow','jagged','ice','frozen']
+    kw_dry = ['savanna','desert','badland']
+    kw_temp = ['stony_peaks','jungle','bamboo_jungle','sparse_jungle','mushroom_fields','plains','sunflower_plains','beach','swamp','dripstone_caves','dark_forest','forest','flower_forest','old_growth_birch_forest','lush_caves','ocean','deep_ocean','deep_cold_ocean','deep_lukewarm_ocean','lukewarm_ocean','river','warm_ocean','meadow']
+    kw_cold = ['old_growth_pine_taiga','old_growth_spruce_taiga','taiga','windswept_hills','windswept_forest','windswept_gravelly_hills']
+
+    rindex = list(Rarity[0])
+    rarity = list(Rarity[1])
+    summary = list(summary)
+    #print(rindex,rarity)
+    #print(summary)
+    sindex = ['Biomes','','','Spawner','Chest','Structures','Ores','Amethyst','Diamond','Gold','Emerald','Bone','Copper','Iron','Coal','Lapis','Redstone','a_stone','a_soil','a_veggies','a_water','a_ores','a_sand','a_snow']
+    d_summary = {}
+    for i in range(len(summary)):
+        if i in range(3,5) or i > 7: 
+            d_summary[summary[i]] = sindex[i]
+
+    #print(d_summary)
+    # area\n land ratio\n water ratio\n another ratio\n ALL biomes with rarity colored
+    area = (21*21*16*16)
+    waterratio = summary[20]
+    #print(area,waterratio,area*waterratio)
+
+    others = summary[17:20]+summary[21:]
+    a_print = [[['area',f'{area}m\u00b2'],0],[['land',topercentage(1-waterratio)],0],[['water',topercentage(waterratio)],0],[[d_summary[max(others)][2:]+'',topercentage(max(others))],0]]
+
+    #print(a_print)
+    for i in range(7,24):
+        summary[i] = topercentage(summary[i])
+
+    #print(summary[7:24])
+
+    coral = 0
+    b_print = []
+    summary0_cp = copy.deepcopy(summary[0])
+    #print(summary0_cp)
+    for b in rarity[0]:
+        b_print.append([b[0],b[1]])
+        summary0_cp.remove(b[0])
+        if 'warm_ocean' in b[0]:
+            coral = 1
+
+    for b in summary0_cp:
+        b_print.append([b,0])
+
+    #print(b_print)
+
+
+    '''res_print = list(zip(list(zip(sindex[7:17],summary[7:17])),rarity[4:14]))
+    print(res_print)'''
+    res_print = []
+    for i in range(10):
+        res_print.append([[sindex[i+7],summary[i+7]],rarity[i+4]])
+
+    #print(res_print)
+
+    s_print = []
+    summary5_cp = copy.deepcopy(summary[5])
+    for s in rarity[1]:
+        s_print.append([s[0],s[1]])
+        summary5_cp.remove(s[0])
+
+    for s in summary5_cp:
+        s_print.append([s,0])
+
+    #print(s_print)
+    # simple biome rarity score and structure rarity score, could use sum(1/p[i])
+    r_n = [len(rarity[0]),len(rarity[1])]
+
+    # sort biomes by season
+    snow,dry,temp,cold = 0,0,0,0
+    for bio in summary[0]:
+        for k in kw_snow:
+            if k in bio:
+                snow = 1
+        for k in kw_dry:
+            if k in bio:
+                dry = 1
+        if bio in kw_cold:
+            cold = 1
+        if bio in kw_temp:
+            temp = 1
+
+
+    # simple season rarity score
+    #print(snow+dry)
+
+
+    # simple ore rarity score
+    metal_r = 0
+    gem_r = 0
+    for type in res_print:
+        if type[1] > 0:
+            if type[0][0] in 'AmethystDiamondEmeraldRedstoneLapis':
+                gem_r += 3**type[1]
+            if type[0][0] in 'GoldIronCopper':
+                metal_r += 3**type[1]
+    #print(metal_r,gem_r)
+    if metal_r > 0:
+        metal_r=int(np.floor(np.log(metal_r)/np.log(3)))-1
+    if gem_r > 0:
+        gem_r=int(np.floor(np.log(gem_r)/np.log(3)))-1
+
+    # sum up for column 3:
+
+    f_print = copy.deepcopy(s_print)
+    if coral == 1:
+        f_print.append(['corals',2])
+    if metal_r > 0:
+        f_print.append(['metal rich',metal_r])
+    if gem_r > 0:
+        f_print.append(['gem rich',gem_r])
+    mclimate = (snow+dry+cold+temp) 
+    if mclimate > 1:
+        if mclimate == 4:
+            mclimate = 5
+        f_print.append(['multiclimate',mclimate])
+    if rarity[14] > 0:
+        f_print.append(['diverse land',rarity[14]])
+    if rarity[2] > 0:
+        f_print.append(['more spawners',rarity[2]])
+    if rarity[3] > 0:
+        f_print.append(['more chests',rarity[3]])
+
+
+    biorarity = 0
+    if len(rarity[0])>0:
+        for b in rarity[0]:
+            biorarity += 3**b[1]
+        biorarity=int(np.floor(np.log(biorarity)/np.log(3)))
+
+    strurarity = 0
+    if len(rarity[1])>0:
+        for b in rarity[1]:
+            strurarity += 3**b[1]
+        strurarity=int(np.floor(np.log(strurarity)/np.log(3)))
+    if biorarity >= 1:
+        f_print.append(['rare biomes',biorarity])
+    if strurarity >= 1:
+        f_print.append(['rare structure',strurarity])
+
+    '''print('')
+    print(ntorgb(a_print))
+    print('')
+    print(ntorgb(b_print))
+    print('')
+    print(ntorgb(res_print))
+    print('')
+    print(ntorgb(f_print))
+    print('')'''
+    # remove 0 and bone from ores:
+    res_print_f = []
+    for res in res_print:
+        if res[0][1] != '0.0%' and res[0][0] != 'Bone':
+            res_print_f.append(res)
+    
+    return ntorgb(a_print), ntorgb(b_print), ntorgb(res_print_f), ntorgb(f_print)

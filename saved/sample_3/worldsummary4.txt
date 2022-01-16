@@ -1,0 +1,24 @@
+['forest', 'lukewarm_ocean', 'beach', 'swamp', 'river', 'windswept_savanna', 'warm_ocean', 'savanna']
+[]
+[]
+19
+16
+['ocean_ruin', 'mineshaft']
+['small_amethyst_bud', 'budding_amethyst', 'copper_ore', 'deepslate_redstone_ore', 'diamond_ore', 'gold_ore', 'redstone_ore', 'lapis_ore', 'deepslate_gold_ore', 'coal_ore', 'deepslate_lapis_ore', 'deepslate_copper_ore', 'medium_amethyst_bud', 'deepslate_coal_ore', 'deepslate_iron_ore', 'large_amethyst_bud', 'deepslate_diamond_ore', 'iron_ore', 'amethyst_cluster', 'amethyst_block']
+0.06052708853325503
+0.039715166642196445
+0.07025400088092791
+0.0
+0.0
+0.21329467038614006
+0.22614153575099105
+0.2276464542651593
+0.06526207605344296
+0.09715900748788724
+0.014059518129770993
+0.23329407204198474
+0.07329437022900763
+0.49125566555343514
+0.00026836832061068704
+0.05725190839694656
+0.0

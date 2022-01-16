@@ -1,0 +1,15 @@
+Biome  [('flower_forest', 2), ('ocean', 1)]
+Structures  [('buried_treasure', 1), ('shipwreck', 1)]
+Spawner  0
+Chest  1
+r_am  4
+r_dm  0
+r_gd  0
+r_em  0
+r_bn  0
+r_cp  0
+r_ir  0
+r_cl  0
+r_lp  0
+r_rs  0
+n_bio  0

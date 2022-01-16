@@ -1,0 +1,24 @@
+['sunflower_plains', 'flower_forest', 'ocean', 'river', 'forest', 'meadow', 'plains', 'dripstone_caves', 'beach', 'birch_forest']
+[]
+[]
+23
+32
+['village', 'mineshaft', 'ocean_ruin']
+['deepslate_coal_ore', 'large_amethyst_bud', 'deepslate_copper_ore', 'amethyst_cluster', 'deepslate_diamond_ore', 'redstone_ore', 'gold_ore', 'deepslate_gold_ore', 'deepslate_iron_ore', 'iron_ore', 'lapis_ore', 'medium_amethyst_bud', 'deepslate_emerald_ore', 'diamond_ore', 'coal_ore', 'copper_ore', 'amethyst_block', 'deepslate_lapis_ore', 'deepslate_redstone_ore', 'small_amethyst_bud', 'budding_amethyst', 'emerald_ore']
+0.022680654046767862
+0.03378655570532731
+0.0581081873058665
+0.0013772490183437847
+0.0
+0.2866143116685225
+0.18504952235831917
+0.2763582019574518
+0.054328078298071854
+0.08169723964132919
+0.009429643194706995
+0.48315660444234404
+0.06536507561436673
+0.2493132679584121
+7.38421550094518e-05
+0.06641363421550095
+0.0
