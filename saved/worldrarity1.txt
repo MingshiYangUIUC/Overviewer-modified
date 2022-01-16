@@ -1,0 +1,15 @@
+Biome  [('sparse_jungle', 2), ('old_growth_birch_forest', 1), ('jungle', 1), ('lukewarm_ocean', 1)]
+Structures  [('ocean_ruin', 1)]
+Spawner  0
+Chest  0
+r_am  0
+r_dm  2
+r_gd  1
+r_em  0
+r_bn  0
+r_cp  0
+r_ir  1
+r_cl  0
+r_lp  2
+r_rs  1
+n_bio  0

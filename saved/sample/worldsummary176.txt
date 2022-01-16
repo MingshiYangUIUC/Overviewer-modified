@@ -1,0 +1,24 @@
+['dripstone_caves', 'forest', 'savanna', 'river']
+[]
+[]
+8
+12
+['mineshaft']
+['medium_amethyst_bud', 'deepslate_diamond_ore', 'amethyst_block', 'deepslate_coal_ore', 'amethyst_cluster', 'iron_ore', 'deepslate_lapis_ore', 'gold_ore', 'deepslate_copper_ore', 'deepslate_gold_ore', 'small_amethyst_bud', 'redstone_ore', 'large_amethyst_bud', 'copper_ore', 'lapis_ore', 'budding_amethyst', 'diamond_ore', 'coal_ore', 'deepslate_redstone_ore', 'deepslate_iron_ore']
+0.025044398535754412
+0.04255010691892284
+0.06911674096625711
+0.0
+0.0
+0.23199594070530247
+0.24290529520495813
+0.22514588090319307
+0.06494871516074083
+0.09829292160487116
+0.01087694943289225
+0.4216682419659735
+0.15989041824196598
+0.1318820888468809
+0.00025844754253308126
+0.005811377599243856
+0.0

@@ -1,0 +1,13 @@
+cd C:\Users\yangm\Desktop\cool stuff\Minecraft-Overviewer-master_2\Minecraft-Overviewer-master
+
+C:\Users\yangm\Anaconda3\python setup.py build
+
+####in script 3.7 sys.path.append('C:/Users/yangm/Desktop/cool stuff/Minecraft-Overviewer-master_2/Minecraft-Overviewer-master')
+
+build\scripts-3.7\overviewer.py C:\Users\yangm\AppData\Roaming\.minecraft\saves\OVW C:\Users\yangm\AppData\Roaming\.minecraft\Overviewer\Out 
+
+
+contribManager.py pngit C:\Users\yangm\AppData\Roaming\.minecraft\Overviewer\Out\world-lighting -m 4096 -z 4 -o C:\Users\yangm\AppData\Roaming\.minecraft\Overviewer\Out\world-lighting\preview.png
+
+
+f = open(f'C:/Users/yangm/AppData/Roaming/.minecraft/Overviewer/test/c_{x}_{z}_.txt','w')

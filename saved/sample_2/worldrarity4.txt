@@ -1,0 +1,14 @@
+Biome  [('stony_shore', 1), ('warm_ocean', 2), ('badlands', 2), ('desert', 2)]
+Structures  [('fossil', 1)]
+Spawner  0
+Chest  0
+r_am  1
+r_dm  2
+r_gd  4
+r_em  0
+r_bn  0
+r_cp  0
+r_ir  3
+r_cl  0
+r_lp  1
+r_rs  1

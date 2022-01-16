@@ -1,0 +1,24 @@
+['river', 'lush_caves', 'desert']
+[]
+[]
+8
+15
+['desert_pyramid', 'fossil']
+['deepslate_iron_ore', 'deepslate_coal_ore', 'deepslate_lapis_ore', 'bone_block', 'amethyst_cluster', 'diamond_ore', 'deepslate_diamond_ore', 'copper_ore', 'deepslate_copper_ore', 'medium_amethyst_bud', 'redstone_ore', 'small_amethyst_bud', 'budding_amethyst', 'deepslate_gold_ore', 'deepslate_redstone_ore', 'iron_ore', 'gold_ore', 'amethyst_block', 'large_amethyst_bud', 'lapis_ore', 'coal_ore']
+0.04775271512113617
+0.04023391812865497
+0.06422723475355055
+0.0
+0.0022723475355054304
+0.23077694235588972
+0.2122639933166249
+0.24918964076858813
+0.06292397660818713
+0.09035923141186299
+0.012966682419659736
+0.005951677693761814
+0.0008861058601134216
+0.07556267722117202
+5.1689508506616256e-05
+0.906656131852552
+0.0

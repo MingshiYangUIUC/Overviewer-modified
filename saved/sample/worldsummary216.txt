@@ -1,0 +1,24 @@
+['river', 'old_growth_birch_forest', 'windswept_hills', 'forest', 'plains', 'dripstone_caves', 'sunflower_plains']
+[]
+[]
+11
+17
+['mineshaft', 'village']
+['amethyst_block', 'deepslate_copper_ore', 'redstone_ore', 'copper_ore', 'lapis_ore', 'coal_ore', 'deepslate_iron_ore', 'gold_ore', 'budding_amethyst', 'iron_ore', 'amethyst_cluster', 'deepslate_lapis_ore', 'deepslate_redstone_ore', 'large_amethyst_bud', 'deepslate_diamond_ore', 'small_amethyst_bud', 'deepslate_gold_ore', 'diamond_ore', 'medium_amethyst_bud', 'deepslate_coal_ore']
+0.04908885435796016
+0.03895324198333098
+0.0717968639638367
+0.0
+0.0
+0.2338607147902246
+0.21655601073597966
+0.22941093374770447
+0.06459245656166125
+0.09574092385930216
+0.002503249054820416
+0.436695120510397
+0.23257325141776938
+0.2160399929111531
+3.69210775047259e-05
+0.005228024574669187
+0.0

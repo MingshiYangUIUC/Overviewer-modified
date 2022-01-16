@@ -1,0 +1,24 @@
+['snowy_beach', 'frozen_ocean', 'snowy_taiga', 'frozen_river', 'snowy_plains', 'lush_caves']
+[]
+[]
+13
+27
+['buried_treasure', 'ocean_ruin', 'village']
+['coal_ore', 'amethyst_cluster', 'large_amethyst_bud', 'deepslate_lapis_ore', 'redstone_ore', 'small_amethyst_bud', 'amethyst_block', 'deepslate_redstone_ore', 'iron_ore', 'medium_amethyst_bud', 'copper_ore', 'deepslate_diamond_ore', 'budding_amethyst', 'deepslate_copper_ore', 'lapis_ore', 'deepslate_gold_ore', 'deepslate_coal_ore', 'gold_ore', 'deepslate_iron_ore', 'diamond_ore']
+0.040208513181486154
+0.03931203931203931
+0.06544259246961949
+0.0
+0.0
+0.23497576200278902
+0.21771033933196096
+0.2480244372136264
+0.06258715718175177
+0.09173915930672688
+7.38421550094518e-06
+0.002828154536862004
+0.004873582230623818
+0.13353615311909262
+0.0
+2.953686200378072e-05
+0.8466076913988658

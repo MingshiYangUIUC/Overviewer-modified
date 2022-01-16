@@ -1,0 +1,24 @@
+['desert', 'badlands', 'savanna', 'stony_shore', 'warm_ocean', 'river', 'dripstone_caves', 'savanna_plateau', 'eroded_badlands']
+[]
+[]
+22
+19
+['mineshaft', 'desert_pyramid', 'fossil']
+['iron_ore', 'deepslate_lapis_ore', 'copper_ore', 'deepslate_iron_ore', 'medium_amethyst_bud', 'deepslate_copper_ore', 'redstone_ore', 'large_amethyst_bud', 'deepslate_coal_ore', 'budding_amethyst', 'diamond_ore', 'lapis_ore', 'small_amethyst_bud', 'gold_ore', 'bone_block', 'coal_ore', 'amethyst_cluster', 'deepslate_redstone_ore', 'amethyst_block', 'deepslate_gold_ore', 'deepslate_diamond_ore']
+0.05669205286704689
+0.04002595539769817
+0.09767425975888802
+0.0
+0.0023564768962808648
+0.21081930261944606
+0.23431576790410164
+0.19753423721867422
+0.06341996516512415
+0.09716198217274
+0.005796609168241966
+0.01973062381852552
+0.0021045014177693763
+0.408140359168242
+7.38421550094518e-06
+0.4378322896975425
+0.0

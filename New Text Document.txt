@@ -1,0 +1,3 @@
+cd C:\Users\yangm\AppData\Roaming\.minecraft\Server
+
+java -jar server.jar --nogui

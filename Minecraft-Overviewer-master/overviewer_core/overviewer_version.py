@@ -1,0 +1,5 @@
+VERSION='unknown'
+HASH='unknown'
+BUILD_DATE='Tue Jan 11 10:46:25 2022'
+BUILD_PLATFORM='Intel64 Family 6 Model 158 Stepping 10, GenuineIntel'
+BUILD_OS='Windows-10-10.0.19041-SP0'

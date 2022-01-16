@@ -1,0 +1,14 @@
+Biome  [('snowy_beach', 1), ('snowy_plains', 1), ('frozen_ocean', 1), ('snowy_taiga', 1), ('frozen_river', 1)]
+Structures  [('village', 1), ('buried_treasure', 1), ('ocean_ruin', 1)]
+Spawner  0
+Chest  0
+r_am  1
+r_dm  1
+r_gd  1
+r_em  0
+r_bn  0
+r_cp  0
+r_ir  2
+r_cl  0
+r_lp  1
+r_rs  0

@@ -1,0 +1,15 @@
+Biome  [('snowy_plains', 1), ('frozen_river', 1), ('frozen_ocean', 1), ('snowy_beach', 1), ('snowy_taiga', 1)]
+Structures  [('igloo', 3), ('village', 1)]
+Spawner  0
+Chest  0
+r_am  0
+r_dm  0
+r_gd  0
+r_em  0
+r_bn  0
+r_cp  0
+r_ir  0
+r_cl  0
+r_lp  1
+r_rs  0
+n_bio  0

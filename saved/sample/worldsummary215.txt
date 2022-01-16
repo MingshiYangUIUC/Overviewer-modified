@@ -1,0 +1,24 @@
+['forest', 'dripstone_caves', 'taiga', 'dark_forest', 'river', 'lush_caves', 'old_growth_birch_forest', 'birch_forest', 'grove']
+[]
+[]
+10
+14
+[]
+['deepslate_lapis_ore', 'amethyst_block', 'large_amethyst_bud', 'deepslate_iron_ore', 'small_amethyst_bud', 'amethyst_cluster', 'gold_ore', 'deepslate_copper_ore', 'deepslate_redstone_ore', 'redstone_ore', 'diamond_ore', 'budding_amethyst', 'lapis_ore', 'copper_ore', 'deepslate_gold_ore', 'deepslate_diamond_ore', 'medium_amethyst_bud', 'coal_ore', 'emerald_ore', 'deepslate_coal_ore', 'iron_ore']
+0.026518592316933806
+0.03334603100184604
+0.05321299850558209
+8.790693585723914e-05
+0.0
+0.3142379933776775
+0.1750227092917631
+0.26668034107891114
+0.05450230023148826
+0.07639112725994081
+0.0026140122873345934
+0.24321390595463138
+0.42660828213610585
+0.2890329631379962
+3.69210775047259e-05
+0.004393608223062382
+0.012021502835538753
