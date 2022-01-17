@@ -7,7 +7,7 @@ modified Minecraft-Overviewer-master/build/scripts-3.7/overviewer.py
 
 
 ## To make change to the overviewer script:
-### After an overviewer is compiled, go to it's directory (Minecraft-Overviewer-master), and the same directory in this repository.\
+### After an overviewer is compiled, go to it's directory (Minecraft-Overviewer-master), and the same directory in this repository.
 ### Replace two files and add one file: 
 - build/scripts-3.7/overviewer.py    replacing the file at build/scripts_generated_for_your_system/overviewer.py;
 - overviewer_core/nbt.py    replacing the file in the same place at destination; 
