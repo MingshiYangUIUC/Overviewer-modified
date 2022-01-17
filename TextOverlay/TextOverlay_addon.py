@@ -1,14 +1,12 @@
 
-from re import L
 import sys
-from weakref import ref
 from PIL import Image, ImageDraw, ImageFont
 import os
 
 
 
 
-def realign_text(li,maxlen=100,widths=[900,690]):
+def realign_text(li,maxlen=20,widths=[900,690]):
     c_dict = {(255,255,255):0,(51,255,51):1,(102,178,255):2,(0,128,255):2,(255,51,255):3,(255,128,0):4, (255,0,0):5}
     font_size = 90
     font = ImageFont.truetype('Textoverlay/assets/Quicksand-Medium.ttf', font_size)
@@ -44,7 +42,7 @@ def realign_text(li,maxlen=100,widths=[900,690]):
         elif w_l[i] > widths[0]:
             place.append(2)
     #print(place)
-    li_new = [[] for i in range(100)]
+    li_new = [[] for i in range(50)]
     j = 0
     li_index = [i for i in range(len(li_sorted))]
     for i in range(len(li_sorted)):
@@ -119,17 +117,20 @@ def replaceimage(image,bottom):
     bg.paste(core,(x_left,y_top))
     return bg
 
-def add_text_to_img(texts,i1,i2):
+def add_text_to_img(texts,i1,src='saved/',dest='saved_finalimages/'):
     #print(os.getcwd())
-    src_dir = 'saved/'
-    dest_dir = 'saved_finalimages/'
+    src_dir = src
+    dest_dir = dest
     #dest_dir = ''
     img_name = 'hdimage'
     postfix = '.png'
     idx_beg = i1
-    idx_end = i2
+    #idx_end = i2
     images = []
-    image = Image.open(src_dir + img_name + str(idx_beg) + postfix)
+    try:
+        image = Image.open(os.path.join(src_dir, img_name + str(idx_beg) + postfix))
+    except:
+        print('directory might be wrong. try "python xxx/TextOverlay/main.py imageindex sourcefolder destfolder.')
     width, height = image.size
     
     # resize canvas
@@ -157,7 +158,7 @@ def add_text_to_img(texts,i1,i2):
     x_text_gap = 150
     y_text_gap = 130
     y_text_height = 120
-    image = Image.open(src_dir + img_name + str(idx) + postfix)
+    image = Image.open(os.path.join(src_dir, img_name + str(idx) + postfix))
     pic_low = int(height-height * y_ratio)-0
     image = replaceimage(image,pic_low)
     text_pos_y = 0
@@ -206,7 +207,7 @@ def add_text_to_img(texts,i1,i2):
         watermark_font = ImageFont.truetype('Textoverlay/assets/Quicksand-Light.ttf', font_size)
         image_draw.text((int(width / 2) - font_size * 2, int(height / 2)), "SAMPLE", font=watermark_font, fill=(255, 0, 0))'''
 
-    image.save(dest_dir + img_name + str(idx) + postfix)
+    image.save(os.path.join(dest_dir, img_name + str(idx) + postfix))
     image.close()
     pass
 
@@ -218,8 +219,8 @@ def add_text_to_img(texts,i1,i2):
 
 
 
-test_texts = [[[['area', '112896m²'], (255, 255, 255)], [['land', '50.87%'], (255, 255, 255)], [['water', '49.13%'], (255, 255, 255)], [['soil', '23.33%'], (255, 255, 255)]],
+'''test_texts = [[[['area', '112896m²'], (255, 255, 255)], [['land', '50.87%'], (255, 255, 255)], [['water', '49.13%'], (255, 255, 255)], [['soil', '23.33%'], (255, 255, 255)]],
                     [['lukewarm_oceannnnnn', (51, 255, 51)], ['swamppppppnnnppp', (0, 128, 255)], ['windswept_savannnnnnna', (255, 51, 255)], ['warm_oceannnnnnnnn', (0, 128, 255)], ['savanna', (51, 255, 51)], ['forest', (255, 255, 255)], ['beach', (255, 255, 255)], ['river', (255, 255, 255)]],
                     [[['Amethyst', '6.05%'], (0, 128, 255)], [['Diamond', '3.97%'], (255, 255, 255)], [['Gold', '7.03%'], (255, 255, 255)], [['Emerald', '0.0%'], (255, 255, 255)], [['Bone', '0.0%'], (255, 255, 255)], [['Copper', '21.33%'], (255, 255, 255)], [['Iron', '22.61%'], (51, 255, 51)], [['Coal', '22.76%'], (255, 255, 255)], [['Lapis', '6.53%'], (255, 255, 255)], [['Redstone', '9.72%'], (255, 255, 255)]],
                     [['ocean_ruin', (51, 255, 51)], ['mineshaft', (255, 255, 255)], ['more metal', (51, 255, 51)], ['more gem', (51, 255, 51)], ['multiclimate', (51, 255, 51)], ['uncommon biomes', (255, 128, 0)], ['corals', (0, 128, 255)]]]
-add_text_to_img(test_texts,1,2)
+add_text_to_img(test_texts,1,2)'''

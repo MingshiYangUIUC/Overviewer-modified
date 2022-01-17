@@ -34,7 +34,7 @@ for /l %%x in (20, 1, 20) do (
 	:: delete world files and overviewer output files
 	_save_delete.bat
 	:: generate final image
-	TextOverlay\main.py %%x
+	TextOverlay\main.py %%x .\saved .\saved_finalimages
 	
 	ECHO "Saved world data and deleted temporary data, end this render..."
 )

@@ -1,6 +1,6 @@
 @ECHO OFF
 
-for /l %%x in (59, 1, 59) do (
+for /l %%x in (61, 1, 61) do (
 	ECHO "Start a render..."
 	ECHO %%x
 
@@ -14,7 +14,6 @@ for /l %%x in (59, 1, 59) do (
 	cd Minecraft-Overviewer-master
 	python build\scripts-3.7\overviewer.py ..\world ..\Out
 	
-	pause
 	:: go back 
 	cd..
 
@@ -29,10 +28,9 @@ for /l %%x in (59, 1, 59) do (
 
 	:: delete world files and overviewer output files
 	_save_delete.bat
-	:: generate final image
-	TextOverlay\main.py %%x
+	:: generate final image|sourcedir|destdir
+	TextOverlay\main.py %%x .\saved .\saved_finalimages
 	
 	ECHO "Saved world data and deleted temporary data, end this render..."
+	pause
 )
-
-pause
