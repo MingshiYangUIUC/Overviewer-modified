@@ -1,0 +1,5 @@
+VERSION='unknown'
+HASH='62ab1a8ee932c0badced0d693f4edde2aeb3ccf5'
+BUILD_DATE='Mon Jan 17 00:12:53 2022'
+BUILD_PLATFORM='x86_64'
+BUILD_OS='Linux-5.10.82-83.359.amzn2.x86_64-x86_64-with-glibc2.2.5'

@@ -1,0 +1,45 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+        echo "[Usage] ./_render_multiproc <nof_images>"
+        exit
+fi
+
+
+# get nof cores
+cores=$(grep -c ^processor /proc/cpuinfo)
+
+
+echo "creating $cores procs..."
+
+# clean prototype
+cd ./renderer-prototype
+./_clean
+cd ../
+
+rm -r results
+mkdir results
+
+total_imgs=$1
+let proc_img=total_imgs/cores
+
+for (( x=0; x<$cores; x++))
+do
+	cp -r renderer-prototype/ rendering-proc$x
+	let start_idx=x*proc_img
+	let end_idx=(x+1)*proc_img
+	if [ $x -eq $(($cores-1)) ]; then
+		let end_idx=total_imgs
+	fi
+	cd ./rendering-proc$x
+	let port=x+25565
+	echo server-port=$port >> server/server.properties
+	taskset -c $x ./_run $start_idx $end_idx >> ../log$x 2>> ../log$x &
+	echo $! >> ../pid
+	cd ../
+	echo process $x will render images from $start_idx to $(($end_idx-1))
+done
+
+
+
+

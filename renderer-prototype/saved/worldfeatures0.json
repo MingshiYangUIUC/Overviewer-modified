@@ -1,0 +1,86 @@
+{
+  "description": "",
+  "external_url": "https://image.peopleland.org",
+  "image": "https://image.peopleland.org/0.png",
+  "name": "World #0",
+  "attributes": [
+    {
+      "trait_type": "area",
+      "value": "112896m^2"
+    },
+    {
+      "trait_type": "land",
+      "value": "76.55%"
+    },
+    {
+      "trait_type": "water",
+      "value": "23.45%"
+    },
+    {
+      "trait_type": "soil",
+      "value": "40.0%"
+    },
+    {
+      "trait_type": "Amethyst",
+      "value": "4.04%"
+    },
+    {
+      "trait_type": "Diamond",
+      "value": "4.19%"
+    },
+    {
+      "trait_type": "Gold",
+      "value": "6.98%"
+    },
+    {
+      "trait_type": "Copper",
+      "value": "24.17%"
+    },
+    {
+      "trait_type": "Iron",
+      "value": "21.17%"
+    },
+    {
+      "trait_type": "Coal",
+      "value": "22.86%"
+    },
+    {
+      "trait_type": "Lapis",
+      "value": "6.77%"
+    },
+    {
+      "trait_type": "Redstone",
+      "value": "9.82%"
+    },
+    {
+      "value": "savanna"
+    },
+    {
+      "value": "river"
+    },
+    {
+      "value": "beach"
+    },
+    {
+      "value": "dripstone_caves"
+    },
+    {
+      "value": "forest"
+    },
+    {
+      "value": "plains"
+    },
+    {
+      "value": "mineshaft"
+    },
+    {
+      "value": "multiclimate"
+    },
+    {
+      "value": "more spawners"
+    },
+    {
+      "value": "rare biomes"
+    }
+  ]
+}

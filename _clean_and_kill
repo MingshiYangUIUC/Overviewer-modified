@@ -1,0 +1,4 @@
+while read in; do kill -9 "$in"; done < pid
+rm log*
+rm -rf rendering-proc*
+rm pid
