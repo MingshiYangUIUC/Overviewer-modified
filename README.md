@@ -14,5 +14,3 @@ modified Minecraft-Overviewer-master/build/scripts-3.7/overviewer.py
 - overviewer_core/sw_analysis.py    should be put in the same folder at destination.
 
 ## TextOverlay is at the same folder with Minecraft-Overviewer-master
-
-nzcsx/Profile-Generator-Proto-Ver
