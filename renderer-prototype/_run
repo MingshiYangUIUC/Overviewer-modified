@@ -50,6 +50,12 @@ for (( x="$1"; x<"$2"; x++ ))
 	# generate final image and save in parent dir
 	python3 ./TextOverlay/main.py $x ./saved ../results
 	
+	# move the json file to ../results
+	mv ./saved/worldfeatures$x.json ../results/worldfeatures$x.json
+
+	# delete generated html and stuffs
+	rm -r ./Out
+	
 	echo "Saved world data and deleted temporary data, end this render..."
  done
 
