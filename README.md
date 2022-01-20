@@ -23,5 +23,6 @@ This is a prototype version. The full version is at another repo.
 - build/scripts-3.7/overviewer.py    replacing the file at build/scripts_generated_for_your_system/overviewer.py;
 - overviewer_core/nbt.py    replacing the file in the same place at destination; 
 - overviewer_core/sw_analysis.py    should be put in the same folder at destination.
+- overviewer_core/tileset.py     replacing the file in the same place at destination
 
 ## TextOverlay is at the same folder with Minecraft-Overviewer-master
