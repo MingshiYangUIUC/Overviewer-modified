@@ -10,11 +10,12 @@ def add_text_to_img(texts,i1,i2):
     postfix = '.png'
     idx_beg = i1
     idx_end = i2
-    images = []
     image = Image.open(src_dir + img_name + str(idx_beg) + postfix)
     width, height = image.size
 
     # resize canvas
+    # change the addon one pls!
+    # change the addon one pls!
     nof_canvas = len(texts) - 1
     x_gap = 200  # x gap between canvas
     canvas_width = int((width - x_gap) / nof_canvas - x_gap)
@@ -26,7 +27,7 @@ def add_text_to_img(texts,i1,i2):
 
     color = (255, 255, 255)
     font_size = 90
-    font = ImageFont.truetype('TextOverlay/assets/Quicksand-Medium.ttf', font_size)
+    font_normal_normal = ImageFont.truetype('TextOverlay/assets/Quicksand-Medium.ttf', font_size)
 
     corner_width = 50
     corner_raius = 200
@@ -42,6 +43,7 @@ def add_text_to_img(texts,i1,i2):
         text_pos_y = 0
 
         image_draw = ImageDraw.Draw(image)
+, 255))
         for j in range(0, len(texts), 1):
             if j != 1:
                 image_draw.rounded_rectangle((x_canvas, y_canvas, x_canvas + canvas_width, y_canvas + canvas_height),
@@ -51,25 +53,25 @@ def add_text_to_img(texts,i1,i2):
                 text_pos_y = y_canvas + y_text_gap
                 for text in texts[j]:
                     text_pos_x = x_canvas + x_text_gap
-                    image_draw.text((text_pos_x, text_pos_y), text[0][0], font=font, fill=text[1])
+                    image_draw.text((text_pos_x, text_pos_y), text[0][0], font=font_normal_normal, fill=text[1])
                     text_pos_y += y_text_height
                 text_pos_y = y_canvas + y_text_gap
                 for text in texts[j]:
                     text_pos_x = x_canvas + half_canvas + x_text_gap
-                    image_draw.text((text_pos_x, text_pos_y), text[0][1], font=font, fill=text[1])
+                    image_draw.text((text_pos_x, text_pos_y), text[0][1], font=font_normal_normal, fill=text[1])
                     text_pos_y += y_text_height
             else:
                 if j == 1:
                     divide = '______________________'
                     text_pos_x = x_canvas + x_text_gap
-                    image_draw.text((text_pos_x, text_pos_y), divide, font=font, fill=(255, 255, 255))
+                    image_draw.text((text_pos_x, text_pos_y), divide, font=font_normal_normal, fill=(255, 255, 255))
                     text_pos_y += y_text_height
                 else:
                     text_pos_y = y_canvas + y_text_gap
                 for k in range(len(texts[j])):
                     text = texts[j][k]
                     text_pos_x = x_canvas + (half_canvas if k % 2 else 0) + x_text_gap
-                    image_draw.text((text_pos_x, text_pos_y), text[0], font=font, fill=text[1])
+                    image_draw.text((text_pos_x, text_pos_y), text[0], font=font_normal_normal, fill=text[1])
                     if k % 2:
                         text_pos_y += y_text_height
 

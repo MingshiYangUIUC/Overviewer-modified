@@ -1,0 +1,86 @@
+{
+  "description": "",
+  "external_url": "https://image.peopleland.org/1",
+  "image": "https://image.peopleland.org/1.png",
+  "name": "World #1",
+  "attributes": [
+    {
+      "trait_type": "area",
+      "value": "112896m^2"
+    },
+    {
+      "trait_type": "land",
+      "value": "95.44%"
+    },
+    {
+      "trait_type": "water",
+      "value": "4.56%"
+    },
+    {
+      "trait_type": "soil",
+      "value": "52.47%"
+    },
+    {
+      "trait_type": "Amethyst",
+      "value": "5.14%"
+    },
+    {
+      "trait_type": "Diamond",
+      "value": "3.48%"
+    },
+    {
+      "trait_type": "Gold",
+      "value": "5.5%"
+    },
+    {
+      "trait_type": "Copper",
+      "value": "31.79%"
+    },
+    {
+      "trait_type": "Iron",
+      "value": "16.92%"
+    },
+    {
+      "trait_type": "Coal",
+      "value": "23.95%"
+    },
+    {
+      "trait_type": "Lapis",
+      "value": "5.44%"
+    },
+    {
+      "trait_type": "Redstone",
+      "value": "7.6%"
+    },
+    {
+      "value": "swamp"
+    },
+    {
+      "value": "savanna"
+    },
+    {
+      "value": "forest"
+    },
+    {
+      "value": "dripstone_caves"
+    },
+    {
+      "value": "Cinnamon"
+    },
+    {
+      "value": "Wine"
+    },
+    {
+      "value": "Amber"
+    },
+    {
+      "value": "Marble"
+    },
+    {
+      "value": "Tobacco"
+    },
+    {
+      "value": "Citrus"
+    }
+  ]
+}

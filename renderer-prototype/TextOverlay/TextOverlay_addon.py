@@ -144,13 +144,15 @@ def add_text_to_img(texts,i1,src='saved/',dest='saved_finalimages/'):
     canvas_height = int(height * y_ratio - y_gap * 2)
     
     
-    color = (255, 255, 255)
+    color = "grey"
+    stroke_color = (0, 0, 0)
     font_size = 90
     #print(os.getcwd())
     fontpath = os.path.join(os.getcwd()+'/TextOverlay/assets/'+'Quicksand-Medium.ttf')
     #print(fontpath,os.getcwd()+'/TextOverlay/assets/'+'Quicksand-Medium.ttf')
     #font = ImageFont.truetype('./TextOverlay/assets/Quicksand-Medium.ttf', font_size)
     font = ImageFont.truetype(fontpath, font_size)
+    font_large = ImageFont.truetype(fontpath, font_size+60)
     corner_width = 50
     corner_raius = 200
 
@@ -163,15 +165,42 @@ def add_text_to_img(texts,i1,src='saved/',dest='saved_finalimages/'):
     y_text_height = 120
     image = Image.open(os.path.join(src_dir, img_name + str(idx) + postfix))
     width, height = image.size
-    pic_low = int(height-height * y_ratio)-0
+
+    pic_low = int(height-height * y_ratio) - 200  # y_max (lowest tip) of the image itself. decrease this number to move the image further up
     image = replaceimage(image,pic_low)
+
     text_pos_y = 0
 
+    titles = ['Geography','Resources','Unique Resources']
     image_draw = ImageDraw.Draw(image)
+    sizes = [image_draw.textsize('Geography', font=font_large),image_draw.textsize('Resources', font=font_large),image_draw.textsize('Unique Resources', font=font_large)]
+    x_titles = [x_gap+canvas_width/2-sizes[0][0]/2,x_gap*2+3*canvas_width/2-sizes[1][0]/2,x_gap*3+5*canvas_width/2-sizes[2][0]/2]
+    stroke_width = 1
+    image_draw.text((x_titles[0],pic_low+150),titles[0],font=font_large,fill=color, stroke_width=stroke_width, stroke_fill=stroke_color)
+    image_draw.text((x_titles[1],pic_low+150),titles[1],font=font_large,fill=color, stroke_width=stroke_width, stroke_fill=stroke_color)
+    image_draw.text((x_titles[2],pic_low+150),titles[2],font=font_large,fill=color, stroke_width=stroke_width, stroke_fill=stroke_color)
+
+    # title : land #n
+    title = "Land #" + str(idx)
+    font_title = ImageFont.truetype(fontpath, font_size+120)
+    title_width, title_height = image_draw.textsize(title, font=font_title)
+    title_pos_x = (width - title_width) / 2
+    title_pos_y = height * 0.07
+    stroke_width = 1
+    image_draw.text((title_pos_x, title_pos_y), title, font=font_title, fill=color, stroke_width=stroke_width, stroke_fill=stroke_color)
+
+    # subtitle: url
+    subtitle = "https://peopleland.org/" + str(idx)
+    font_subtitle = ImageFont.truetype(fontpath, font_size + 60)
+    subtitle_width, subtitle_height = image_draw.textsize(subtitle, font=font_subtitle)
+    subtitle_pos_x = (width - subtitle_width) / 2
+    subtitle_pos_y = title_pos_y + 250
+    stroke_width = 1
+    image_draw.text((subtitle_pos_x, subtitle_pos_y), subtitle, font=font_subtitle, fill=color, stroke_width=stroke_width, stroke_fill=stroke_color)
+
     for j in range(0, len(texts), 1):
         if j != 1:
-            image_draw.rounded_rectangle((x_canvas, y_canvas, x_canvas + canvas_width, y_canvas + canvas_height),
-                                            fill="black", outline="grey", width=corner_width, radius=corner_raius)
+            image_draw.rounded_rectangle((x_canvas, y_canvas, x_canvas + canvas_width, y_canvas + canvas_height),fill="black", outline="grey", width=corner_width, radius=corner_raius)
 
         if j == 0 or j == 2:
             text_pos_y = y_canvas + y_text_gap

@@ -3,6 +3,7 @@ from PIL import Image
 import time
 import os
 import copy
+import random
 
 
 def packed_longarray_to_shorts_v116_nbt(long_array, n): #Borrowed from Overviewer
@@ -159,7 +160,7 @@ def tilestopng(outdir):
     ref = Image.open(f'{outdir}/world-lighting/base.png')
     box = ref.getbbox()
     if (box[2]-box[0]) > 200:
-        print('Normal set png')
+        #print('Normal set png')
         depth = 4
         L = 384*2**depth
         imagebig = Image.new('RGBA', (L,L))
@@ -199,7 +200,7 @@ def tilestopng(outdir):
         imagebig.save(f'{outdir}/hdimage.png',"PNG")
         #size = os.path.getsize(f'{outdir}/hdimagexxxx.png')
     else:
-        print('Deeper set png')
+        #print('Deeper set png')
         depth = 5
         L = 384*2**depth
         imagebig = Image.new('RGBA', (L,L))
@@ -375,7 +376,7 @@ def read_chunkdata(outdir): #The loops inside don't use much time so I don't try
             snow += 1
     #print(veggies)
     ore_types = list(set(ORES))
-    if len(EB) > 0:
+    '''if len(EB) > 0:
         print(f'Emerald biomes found: {EB}.')
     if len(GB) > 0:
         print(f'gold biomes found: {GB}.')
@@ -383,7 +384,7 @@ def read_chunkdata(outdir): #The loops inside don't use much time so I don't try
     print(f'# Spawner chunks: {SP}, # Chest chunks: {CS}.')
     print(f'Ore composition: Amethyst: {round(am/tot_ore*100,2)}%, Diamond: {round(dm/tot_ore*100,2)}%, Gold: {round(gd/len(ORES)*100,2)}%, Emerald: {round(em/len(ORES)*100,2)}%.')
     print(f'Land coverage: Stone: {round(stone/tot_surf*100,2)}%, Soil: {round(soil/tot_surf*100,2)}%, Veggies: {round(veggies/tot_surf*100,2)}%, Water: {round(water/tot_surf*100,2)}%, Ores: {round(ores/tot_surf*100,2)}%.')
-    
+    '''
     #return features, which can be used to generate pictures.
     return BIOMES,EB,GB,SP,CS,Ustructure,ore_types,am/tot_ore,dm/tot_ore,gd/tot_ore,em/tot_ore,bn/tot_ore,cp/tot_ore,ir/tot_ore,cl/tot_ore,lp/tot_ore,rs/tot_ore,stone/tot_surf,soil/tot_surf,veggies/tot_surf,water/tot_surf,ores/tot_surf,sandy/tot_surf,snow/tot_surf
 
@@ -542,10 +543,9 @@ def get_features(summary,Rarity):
     for s in summary5_cp:
         s_print.append([s,0])
 
-    #print(s_print)
-    # simple biome rarity score and structure rarity score, could use sum(1/p[i])
-    r_n = [len(rarity[0]),len(rarity[1])]
 
+
+    ''' old rightmost column stuff
     # sort biomes by season
     snow,dry,temp,cold = 0,0,0,0
     for bio in summary[0]:
@@ -616,26 +616,23 @@ def get_features(summary,Rarity):
     if biorarity >= 1:
         f_print.append(['rare biomes',biorarity])
     if strurarity >= 1:
-        f_print.append(['rare structure',strurarity])
+        f_print.append(['rare structure',strurarity])'''
 
-    '''print('')
-    print(ntorgb(a_print))
-    print('')
-    print(ntorgb(b_print))
-    print('')
-    print(ntorgb(res_print))
-    print('')
-    print(ntorgb(f_print))
-    print('')'''
+    
     # remove 0 and bone from ores:
     res_print_f = []
     for res in res_print:
         if res[0][1] != '0.0%' and res[0][0] != 'Bone':
             res_print_f.append(res)
 
+    ############## new list of features, the old generation is no longer used.
+    featureStrings = ["Amber","Cinnamon","Citrus","Cocoa","Coffee","Furs","Ivory","Jade","Marble","Silk","Tea","Tobacco","Whales","Turtles","Wine"]
     
-    #don't do it anymore if image code changed.
-    '''b_print = reformat_text(b_print,10)
-    f_print = reformat_text(f_print)'''
+    features = random.sample(featureStrings,random.randint(4,6))
+    f_print_new = []
+    for f in features:
+        f_print_new.append([f,0])
+    ##############
+
     #            area data         biome data      resource data         feature data
-    return ntorgb(a_print), ntorgb(b_print), ntorgb(res_print_f), ntorgb(f_print)
+    return ntorgb(a_print), ntorgb(b_print), ntorgb(res_print_f), ntorgb(f_print_new)

@@ -29,7 +29,7 @@ if __name__ == '__main__':
         with open(f'saved/worldfeatures{i}.json','r') as f: data = json.load(f)
         data = {
             'description': '',
-            'external_url': 'https://image.peopleland.org',
+            'external_url': f'https://image.peopleland.org/{i}',
             'image': f'https://image.peopleland.org/{i}.png',
             'name': f'World #{i}',
             'attributes': data['attributes'],
