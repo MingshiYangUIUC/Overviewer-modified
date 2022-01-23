@@ -199,7 +199,7 @@ def tilestopng(outdir):
         imagebig.paste(imagesm,(xb,yb))
         imagebig.save(f'{outdir}/hdimage.png',"PNG")
         #size = os.path.getsize(f'{outdir}/hdimagexxxx.png')
-    else:
+    elif 100 < (box[2]-box[0]) <= 200:
         #print('Deeper set png')
         depth = 5
         L = 384*2**depth
@@ -237,6 +237,48 @@ def tilestopng(outdir):
         xb = int(L/2/2-xw/2)
         yb = int(L/2/2-yw/2)
         imagebig = Image.new('RGBA', (384*2**(depth-1),384*2**(depth-1)))
+        imagebig.paste(imagesm,(xb,yb))
+        imagebig.save(f'{outdir}/hdimage.png',"PNG")
+        #size = os.path.getsize(f'{outdir}/hdimage.png')
+    else:
+        #print('Deepest set png')
+        depth = 6
+        L = 384*2**depth
+        imagebig = Image.new('RGBA', (L,L))
+        FL = []
+        FI = []
+        for a in range(4):
+            for b in range(4):
+                for c in range(4):
+                    for d in range(4):
+                        for e in range(4):
+                            for f in range(4):
+                                try:
+                                    FL.append(Image.open(f'{outdir}/world-lighting/{a}/{b}/{c}/{d}/{e}/{f}.png'))
+                                    FI.append([a,b,c,d,e,f])
+                                except:
+                                    pass
+
+        for i in range(len(FI)):
+            im = FL[i]
+            loc = FI[i]
+            x,y = 0,0
+            mtp = 1
+            for lc in loc:
+                if lc // 2 == 1:
+                    y += 2**(-mtp)*L
+                if lc % 2 == 1:
+                    x += 2**(-mtp)*L
+                mtp += 1
+            x,y = int(x),int(y)
+            imagebig.paste(im,(x,y))
+        a,b,c,d = imagebig.getbbox()
+        imagesm = imagebig.crop((a,b,c,d))
+        xw = abs(c-a)
+        yw = abs(d-b)
+        xb = int(L/2/2/2-xw/2)
+        yb = int(L/2/2/2-yw/2)
+        imagebig = Image.new('RGBA', (384*2**(depth-2),384*2**(depth-2)))
         imagebig.paste(imagesm,(xb,yb))
         imagebig.save(f'{outdir}/hdimage.png',"PNG")
         #size = os.path.getsize(f'{outdir}/hdimage.png')
